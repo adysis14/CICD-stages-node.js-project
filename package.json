@@ -1,4 +1,7 @@
 {
-  "name" : "Simple",
-  "main" : "app.js"
+  "name": "simple",
+  "main": "app.js",
+  "dependencies": {
+    "moment": "^2.29.4"
+  }
 }
