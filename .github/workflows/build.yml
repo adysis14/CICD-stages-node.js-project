@@ -6,7 +6,7 @@ jobs:
     steps:
       - uses: actions/checkout@V3
       - run: |
-        node --version
-        npm --version
-        npm install
-        node app.js
+          node --version
+          npm --version
+          npm install
+          node app.js
