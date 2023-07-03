@@ -4,12 +4,12 @@ const app = require('../app');
 const date = require('../app');
 
 describe('Application', () => {
-  it('should print "Hi, Demo" message', () => {
+  it('should print "Hello, Demo!" message', () => {
     // Suppress console.log output during the test
     const mockLog = console.log;
     console.log = () => {};
 
-    // Run the application code that contains console.log("Hi, Demo");
+    // Run the application code that contains console.log("Hello, Demo!");
     require('../app');
 
     // Restore console.log
