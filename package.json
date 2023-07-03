@@ -2,6 +2,9 @@
   "name": "simple",
   "main": "app.js",
   "dependencies": {
+    "mocha": "^10.2.0"
+  },
+  "devDependencies": {
     "moment": "^2.29.4"
   }
 }

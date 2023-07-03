@@ -1,5 +1,6 @@
-console.log('Hello, Demo!');
-
-var moment= require('moment');
-var date= moment().format('LL');
-console.log(date);
+// app.js
+const moment = require('moment');
+const date = moment().format('LL');
+console.log("Hi, Demo");
+console.log("Current date:", date);
+module.exports = date;

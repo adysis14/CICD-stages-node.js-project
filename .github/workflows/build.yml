@@ -4,8 +4,10 @@ jobs:
     runs-on: ubuntu-latest
     container: node:16
     steps:
-      -run: node --version
-      -run: npm --version
-      -uese: actions/checkout@V3
-      -run: npm install
-      -run: node app.js
+      -uses: actions/checkout@V3
+      -name: Install Dependencies
+       run: |
+        npm install
+        node app.js
+      -name: Test
+       run: npx mocha test/app.test.js
