@@ -26,6 +26,9 @@ jobs:
       - name: Test
         run: npx mocha test/app.test.js
         
+      - name: Add node_modules/.bin to PATH
+        run: echo "::add-path::$(pwd)/node_modules/.bin"
+        
       - name: code scanning
         run: trufflehog --branch main
         
