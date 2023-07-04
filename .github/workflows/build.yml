@@ -14,3 +14,7 @@ jobs:
         run: npm install
       - name: Test
         run: npx mocha test/app.test.js
+      - name: Security Scan - TruffleHog OSS
+        uses: trufflesecurity/trufflehog@v3.42.0
+
+        
