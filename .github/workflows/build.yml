@@ -30,6 +30,7 @@ jobs:
         run: trufflehog --branch main
         
       - name: Security Scan - TruffleHog OSS
+        if: always()
         uses: trufflesecurity/trufflehog@v3.42.0
 
         
