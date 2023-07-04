@@ -25,6 +25,10 @@ jobs:
           npm install trufflehog
       - name: Test
         run: npx mocha test/app.test.js
+        
+      - name: code scanning
+        run: trufflehog --branch main
+        
       - name: Security Scan - TruffleHog OSS
         uses: trufflesecurity/trufflehog@v3.42.0
 
