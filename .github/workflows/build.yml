@@ -26,14 +26,16 @@ jobs:
       - name: Test
         run: npx mocha test/app.test.js
         
-      - name: Add node_modules/.bin to PATH
-        run: echo "PATH=$(pwd)/node_modules/.bin:$PATH" >> $GITHUB_ENV
+#       - name: Add node_modules/.bin to PATH
+#         run: echo "PATH=$(pwd)/node_modules/.bin:$PATH" >> $GITHUB_ENV
         
-      - name: code scanning
-        run: trufflehog --branch main
+#       - name: code scanning
+#         run: trufflehog --branch main
         
-      - name: Security Scan - TruffleHog OSS
-        if: always()
-        uses: trufflesecurity/trufflehog@v3.42.0
-
-        
+  
+  Cred_Checker:
+      runs-on: ubuntu-latest
+      steps:        
+       - uses: actions/checkout@master
+       - name:  trufflehog-actions-scan
+         uses: edplato/trufflehog-actions-scan@v0.9l-beta
