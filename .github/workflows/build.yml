@@ -33,9 +33,19 @@ jobs:
 #         run: trufflehog --branch main
         
   
-  Cred_Checker:
+  Trufflehog:
       runs-on: ubuntu-latest
       steps:        
        - uses: actions/checkout@master
        - name:  trufflehog-actions-scan
          uses: edplato/trufflehog-actions-scan@v0.9l-beta
+         
+  Gitleaks_scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - uses: gitleaks/gitleaks-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
