@@ -6,5 +6,4 @@ console.log("Hello, Just a Demo!");
 console.log("Current date:", date);
 module.exports = date;
 
-import "fmt"
 const DiscordClientSecret = "8dyfuiRyqFvVc3RRr_edRk-fZ__JItpP" ;
