@@ -3,7 +3,6 @@ on:
   push:
     branches:
       - main
-  pull_request:
 jobs:
   build-node:
     runs-on: ubuntu-latest
@@ -35,6 +34,7 @@ jobs:
         
   
   Trufflehog:
+      needs: build-node
       runs-on: ubuntu-latest
       steps:        
        - uses: actions/checkout@master
@@ -42,6 +42,7 @@ jobs:
          uses: edplato/trufflehog-actions-scan@v0.9l-beta
          
   Gitleaks_scan:
+    needs: build-node
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
