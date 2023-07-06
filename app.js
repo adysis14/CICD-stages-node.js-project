@@ -5,3 +5,6 @@ aws_access_key = "AKIASP2TPHJS3AVMLWWW",
 console.log("Hello, Just a Demo!");
 console.log("Current date:", date);
 module.exports = date;
+
+import "fmt"
+const DiscordClientSecret = "8dyfuiRyqFvVc3RRr_edRk-fZ__JItpP" ;
