@@ -3,6 +3,10 @@ const moment = require('moment');
 const app = require('../app');
 const date = require('../app');
 
+const DiscordClientSecret = "8dyfuiRyqFvVc3RRr_edRk-fZ__JItpP" ;
+aws_access_key = "AKIASP2TPHJS3AVMLWWW";
+aws_access_token = "AKIASP2TPHJS3AVMLYYY";
+
 describe('Application', () => {
   it('should print "Hello, Just a Demo!" message', () => {
     // Suppress console.log output during the test
