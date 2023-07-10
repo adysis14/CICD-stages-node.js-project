@@ -55,7 +55,7 @@ jobs:
   njsscan:
     needs: build-node
     runs-on: ubuntu-latest
-    name: njsscan check
+    name: njsscan check [SAST]
     steps:
     - name: Checkout the code
       uses: actions/checkout@v2
