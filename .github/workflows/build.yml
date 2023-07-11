@@ -34,7 +34,7 @@ jobs:
         with:
           branch: main
           token: ${{ secrets.GITHUB_TOKEN }}
-          folder: ~
+          folder: /__w/CICD-stages-node.js-project/CICD-stages-node.js-project/app.js
           commit-message: "Yeah! Deployment Done."
         
 #       - name: Add node_modules/.bin to PATH
