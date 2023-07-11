@@ -5,6 +5,7 @@ on:
       - main
 jobs:
   build-node:
+    concurrency: ci-${{ github.ref }}
     runs-on: ubuntu-latest
     container: node:16
     permissions:
@@ -31,6 +32,8 @@ jobs:
         with:
           branch: gh-pages
           token: ${{ secrets.GITHUB_TOKEN }}
+          folder: .
+          commit-message: "Yeah! Deployment Done."
         
 #       - name: Add node_modules/.bin to PATH
 #         run: echo "PATH=$(pwd)/node_modules/.bin:$PATH" >> $GITHUB_ENV
