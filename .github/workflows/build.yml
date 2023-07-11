@@ -27,7 +27,7 @@ jobs:
         run: npx mocha test/app.test.js
         
       - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@v2.3.1
+        uses: JamesIves/github-pages-deploy-action@v4.4.2
         with:
           branch: gh-pages
           token: ${{ secrets.GITHUB_TOKEN }}
