@@ -25,14 +25,16 @@ jobs:
           npm install
           npm install trufflehog
       - name: Test
-        run: npx mocha test/app.test.js
+        run: |
+          npx mocha test/app.test.js
+          echo pwd
         
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4.4.2
         with:
-          branch: gh-pages
+          branch: main
           token: ${{ secrets.GITHUB_TOKEN }}
-          folder: .
+          folder: ../app.js
           commit-message: "Yeah! Deployment Done."
         
 #       - name: Add node_modules/.bin to PATH
