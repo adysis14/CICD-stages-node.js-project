@@ -30,11 +30,11 @@ jobs:
           pwd
         
       - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@v4.4.2
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: main
           token: ${{ secrets.GITHUB_TOKEN }}
-          folder: /__w/CICD-stages-node.js-project/CICD-stages-node.js-project/app.js
+          folder: test
           commit-message: "Yeah! Deployment Done."
         
 #       - name: Add node_modules/.bin to PATH
