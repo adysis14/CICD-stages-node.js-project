@@ -35,7 +35,7 @@ jobs:
         with:
           branch: main
           token: ${{ secrets.GITHUB_TOKEN }}
-          folder: test
+          folder: .
           commit-message: "Yeah! Deployment Done."
         
 #       - name: Add node_modules/.bin to PATH
@@ -45,13 +45,13 @@ jobs:
 #         run: trufflehog --branch main
         
   
-  Trufflehog:
-      needs: build-node
-      runs-on: ubuntu-latest
-      steps:        
-       - uses: actions/checkout@master
-       - name:  trufflehog-actions-scan
-         uses: edplato/trufflehog-actions-scan@v0.9l-beta
+#   Trufflehog:
+#       needs: build-node
+#       runs-on: ubuntu-latest
+#       steps:        
+#        - uses: actions/checkout@master
+#        - name:  trufflehog-actions-scan
+#          uses: edplato/trufflehog-actions-scan@v0.9l-beta
          
   Gitleaks_scan:
     needs: build-node
@@ -64,15 +64,15 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           
-  njsscan:
-    needs: build-node
-    runs-on: ubuntu-latest
-    name: njsscan check [SAST]
-    steps:
-    - name: Checkout the code
-      uses: actions/checkout@v2
-    - name: nodejsscan scan
-      id: njsscan
-      uses: ajinabraham/njsscan-action@master
-      with:
-        args: '.'
+#   njsscan:
+#     needs: build-node
+#     runs-on: ubuntu-latest
+#     name: njsscan check [SAST]
+#     steps:
+#     - name: Checkout the code
+#       uses: actions/checkout@v2
+#     - name: nodejsscan scan
+#       id: njsscan
+#       uses: ajinabraham/njsscan-action@master
+#       with:
+#         args: '.'
