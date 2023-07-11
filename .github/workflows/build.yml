@@ -27,14 +27,14 @@ jobs:
       - name: Test
         run: |
           npx mocha test/app.test.js
-          echo pwd
+          pwd
         
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4.4.2
         with:
           branch: main
           token: ${{ secrets.GITHUB_TOKEN }}
-          folder: ../app.js
+          folder: ~
           commit-message: "Yeah! Deployment Done."
         
 #       - name: Add node_modules/.bin to PATH
