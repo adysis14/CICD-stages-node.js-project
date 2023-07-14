@@ -1,0 +1,11 @@
+{
+  "name": "simple",
+  "main": "app.js",
+  "dependencies": {
+    "mocha": "^10.2.0",
+    "trufflehog": "^0.0.5"
+  },
+  "devDependencies": {
+    "moment": "^2.29.4"
+  }
+}
