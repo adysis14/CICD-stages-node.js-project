@@ -30,14 +30,6 @@ jobs:
           npx mocha test/app.test.js
           pwd
         
-      - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          branch: main
-          token: ${{ secrets.GITHUB_TOKEN }}
-          folder: .
-          commit-message: "Yeah! Deployment Done."
-        
 #       - name: Add node_modules/.bin to PATH
 #         run: echo "PATH=$(pwd)/node_modules/.bin:$PATH" >> $GITHUB_ENV
         
