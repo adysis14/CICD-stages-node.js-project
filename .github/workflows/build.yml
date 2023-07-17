@@ -29,6 +29,18 @@ jobs:
           npx mocha test/app.test.js
           pwd
 
+  SonarCloud:
+    needs: build-node
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - uses: sonarsource/sonarqube-scan-action@master
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
+
   
 #   Trufflehog:
 #       needs: build-node
@@ -38,13 +50,13 @@ jobs:
 #        - name:  trufflehog-actions-scan
 #          uses: edplato/trufflehog-actions-scan@v0.9l-beta
          
-  Gitleaks_scan:
-    needs: build-node
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
-      - uses: gitleaks/gitleaks-action@v2
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#   Gitleaks_scan:
+#     needs: build-node
+#     runs-on: ubuntu-latest
+#     steps:
+#       - uses: actions/checkout@v3
+#         with:
+#           fetch-depth: 0
+#       - uses: gitleaks/gitleaks-action@v2
+#         env:
+#           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
