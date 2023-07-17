@@ -1,16 +1,23 @@
-name: Run SonarCloud analysis
+name: Build
 on:
   workflow_call:
-
 jobs:
-  sonarcloud:
+  build:
+    name: Build
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-      - name: Setup SonarCloud
-        uses: sonarsource/sonarcloud-github-action@master
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - uses: sonarsource/sonarqube-scan-action@master
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-      - name: Run SonarCloud analysis
-        run: sonarcloud
+          SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
+      # If you wish to fail your job when the Quality Gate is red, uncomment the
+      # following lines. This would typically be used to fail a deployment.
+      # We do not recommend to use this in a pull request. Prefer using pull request
+      # decoration instead.
+      # - uses: sonarsource/sonarqube-quality-gate-action@master
+      #   timeout-minutes: 5
+      #   env:
+      #     SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
