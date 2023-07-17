@@ -1,0 +1,16 @@
+name: Run SonarCloud analysis
+on:
+  workflow_call:
+
+jobs:
+  sonarcloud:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Setup SonarCloud
+        uses: sonarsource/sonarcloud-github-action@master
+        with:
+          sonarcloud-token: ${{ secrets.SONAR_TOKEN }}
+      - name: Run SonarCloud analysis
+        run: sonarcloud
