@@ -2,7 +2,7 @@ on:
   pull_request:
   push:
     branches:
-      - main
+      - mainss
 jobs:
   build-node:
     concurrency: ci-${{ github.ref }}
