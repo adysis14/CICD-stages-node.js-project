@@ -1,7 +1,8 @@
 name: Repo_Dispatch_Demo
 
 on:
-  workflow_dispatch:
+  push: 
+#workflow_dispatch:
 
 jobs:
   trigger_build:
