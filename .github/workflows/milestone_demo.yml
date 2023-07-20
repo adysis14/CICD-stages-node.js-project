@@ -1,0 +1,12 @@
+name: Milestone trigger demo
+on:
+  milestone:
+    types: [created, updated]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Build
+        run: echo "Building for milestone ${github.event.milestone.title}"
