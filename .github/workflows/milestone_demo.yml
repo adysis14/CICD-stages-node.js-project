@@ -9,4 +9,4 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Build
-        run: echo "Building for milestone ${github.event.milestone.title}"
+        run: echo "Building milestone !!!"
