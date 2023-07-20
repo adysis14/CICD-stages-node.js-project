@@ -12,7 +12,7 @@ jobs:
       uses: actions/checkout@v3
       
     - name: Repo-Dispatch
-      uses: peter-evans/repository-dospatch@v2.1.1
+      uses: peter-evans/repository-dispatch@v2.1.1
       with:
         REPO_ACCESS_TOKEN: ${{ secrets.REPO_DISPATCH_ACCESS_TOKEN }}
         repository: adysis14/github_package_demo
